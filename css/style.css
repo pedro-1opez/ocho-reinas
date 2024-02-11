@@ -1,0 +1,43 @@
+h1{
+    text-align: center;
+}
+
+table{
+    border: 5px solid #542F2D;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+}
+
+tr:nth-child(odd) td:nth-child(even),
+tr:nth-child(even) td:nth-child(odd){
+    background-color: #a5682a; 
+}
+
+tr:nth-child(even) td:nth-child(even),
+tr:nth-child(odd) td:nth-child(odd) {
+    background-color: #fbf5de;
+}
+
+.click:hover{
+    cursor: pointer;
+}
+
+.click:active{
+    cursor: grabbing;
+}
+
+select{
+    margin: 0px 20px 5px 0px;
+    margin: auto;
+}
+
+input{
+    margin: auto;
+}
+
+.menu{
+    max-width: 650px;
+    margin: auto;
+    text-align: left;
+}
