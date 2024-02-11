@@ -4,9 +4,9 @@
    || Materia: Simulación de Sistemas para Ingeniería de Software ||
    || Tarea: Problema de las 8 reinas                             ||
    || Variante (5): Seis soluciones                               ||
+   ||=============================================================||
+   || Extra: (1) Bloqueo de celdas.                               ||
    =================================================================
-   || Extra: (1) Bloqueo de celdas             
-             (4) Cambio de color de celdas en linea de ataque             
 
 */
 
@@ -15,6 +15,7 @@ let reinasMax = 8;
 let reinasColocadas = 0;
 let columnasBloqueadas = [];
 let indice = -1;
+let imagen = "background-image: url(./img/reina.png); background-size: cover";
 
 
 /*
@@ -38,13 +39,15 @@ function colocarReina(celda){
 
         //Se verifica que no se hayan colocado las 8 reinas 
         if (reinasColocadas < 8) {
-
-            if((renglon+columna)%2 == 0){
-                celda.style="background-image: url(./img/reina.png); background-size: cover";
-            }else{
-                celda.style="background-image: url(./img/reina.png); background-size: cover";
-            }
             
+            celda.style="background-image: url(./img/reina.png); background-size: cover";            
+            
+            /* 
+              =====================================
+              || Variante (1): Bloqueo de celdas ||
+              =====================================
+            */
+
             for(let i = 0; i < 8; i++){
 
                 //Se bloquea la columna
@@ -281,9 +284,9 @@ function colocarReina(celda){
 
 
 /*
-  ===================================
-  || Variante (5): Seis soluciones ||
-  ===================================
+  =======================================
+  || Variante (5): Seis soluciones     ||
+  =======================================
 
   La función solucion() se utiliza para mostrar una serie de soluciones predefinidas.
   Dependiendo de la solución seleccionada, se llama a una función en particular para 
@@ -291,9 +294,9 @@ function colocarReina(celda){
 */
 function solucion(){
     let opcion = document.getElementById('opciones');
-    let valor = parseInt(opcion.options[opcion.selectedIndex].value);
+    let valor = parseInt(opcion.options[opcion.selectedIndex].value);    
 
-    reiniciar();
+    reiniciar(); 
 
     switch(valor){
         case 1: solucion1();
@@ -314,74 +317,74 @@ function solucion(){
 
 function solucion1(){
     let celdas = document.getElementById('tablero');
-    celdas.rows[0].cells[3].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[1].cells[6].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[2].cells[2].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[3].cells[7].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[4].cells[1].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[5].cells[4].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[6].cells[0].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[7].cells[5].style="background-image: url(/img/reina.png); background-size: cover";
+    celdas.rows[0].cells[7].style= imagen;
+    celdas.rows[1].cells[3].style= imagen;
+    celdas.rows[2].cells[0].style= imagen
+    celdas.rows[3].cells[2].style= imagen;
+    celdas.rows[4].cells[5].style= imagen;
+    celdas.rows[5].cells[1].style= imagen;
+    celdas.rows[6].cells[6].style= imagen;
+    celdas.rows[7].cells[4].style= imagen;
 }
 
 function solucion2(){
     let celdas = document.getElementById('tablero');
-    celdas.rows[0].cells[4].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[1].cells[1].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[2].cells[3].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[3].cells[6].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[4].cells[2].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[5].cells[7].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[6].cells[5].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[7].cells[0].style="background-image: url(/img/reina.png); background-size: cover";
+    celdas.rows[0].cells[5].style= imagen;
+    celdas.rows[1].cells[2].style= imagen;
+    celdas.rows[2].cells[4].style= imagen;
+    celdas.rows[3].cells[6].style= imagen;
+    celdas.rows[4].cells[0].style= imagen;
+    celdas.rows[5].cells[3].style= imagen;
+    celdas.rows[6].cells[1].style= imagen;
+    celdas.rows[7].cells[7].style= imagen;
 }
 
 function solucion3(){
     let celdas = document.getElementById('tablero');
-    celdas.rows[0].cells[3].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[1].cells[1].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[2].cells[6].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[3].cells[2].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[4].cells[5].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[5].cells[7].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[6].cells[4].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[7].cells[0].style="background-image: url(/img/reina.png); background-size: cover";
+    celdas.rows[0].cells[2].style= imagen;
+    celdas.rows[1].cells[5].style= imagen;
+    celdas.rows[2].cells[7].style= imagen;
+    celdas.rows[3].cells[1].style= imagen;
+    celdas.rows[4].cells[3].style= imagen;
+    celdas.rows[5].cells[0].style= imagen;
+    celdas.rows[6].cells[6].style= imagen;
+    celdas.rows[7].cells[4].style= imagen;
 }
 
 function solucion4(){
     let celdas = document.getElementById('tablero');
-    celdas.rows[0].cells[3].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[1].cells[6].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[2].cells[0].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[3].cells[7].style="background-image: url(/img/reina.png); background-size: cover"
-    celdas.rows[4].cells[4].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[5].cells[1].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[6].cells[5].style="background-image: url(/img/reina.png); background-size: cover";
-    celdas.rows[7].cells[2].style="background-image: url(/img/reina.png); background-size: cover";
+    celdas.rows[0].cells[2].style= imagen;
+    celdas.rows[1].cells[5].style= imagen;
+    celdas.rows[2].cells[7].style= imagen;
+    celdas.rows[3].cells[0].style= imagen;
+    celdas.rows[4].cells[4].style= imagen;
+    celdas.rows[5].cells[6].style= imagen;
+    celdas.rows[6].cells[1].style= imagen;
+    celdas.rows[7].cells[3].style= imagen;
 }
 
 function solucion5(){
     let celdas = document.getElementById('tablero');
-    celdas.rows[0].cells[5].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[1].cells[1].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[2].cells[6].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[3].cells[0].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[4].cells[3].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[5].cells[7].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[6].cells[4].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[7].cells[2].style="background-image: url(./img/reina.png); background-size: cover";
+    celdas.rows[0].cells[5].style= imagen;
+    celdas.rows[1].cells[1].style= imagen;
+    celdas.rows[2].cells[6].style= imagen;
+    celdas.rows[3].cells[0].style= imagen;
+    celdas.rows[4].cells[3].style= imagen;
+    celdas.rows[5].cells[7].style= imagen;
+    celdas.rows[6].cells[4].style= imagen;
+    celdas.rows[7].cells[2].style= imagen;
 }
 
 function solucion6(){
     let celdas = document.getElementById('tablero');
-    celdas.rows[0].cells[5].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[1].cells[3].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[2].cells[6].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[3].cells[0].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[4].cells[7].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[5].cells[1].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[6].cells[4].style="background-image: url(./img/reina.png); background-size: cover";
-    celdas.rows[7].cells[2].style="background-image: url(./img/reina.png); background-size: cover";
+    celdas.rows[0].cells[5].style= imagen;
+    celdas.rows[1].cells[0].style= imagen;
+    celdas.rows[2].cells[4].style= imagen;
+    celdas.rows[3].cells[1].style= imagen;
+    celdas.rows[4].cells[7].style= imagen;
+    celdas.rows[5].cells[2].style= imagen;
+    celdas.rows[6].cells[6].style= imagen;
+    celdas.rows[7].cells[3].style= imagen;
 }
 
 /*
@@ -406,7 +409,8 @@ function reiniciar(){
 }
 
 /*
-  La funcion btnReiniciar() ......
+  La funcion btnReiniciar() restaura el estado inicial cuando el jugador
+  presiona el boton reiniciar.
 */
 function btnReiniciar(){
     let celdas = document.getElementById('tablero');
@@ -424,4 +428,5 @@ function btnReiniciar(){
     document.getElementById("colocadas").innerHTML = `Reinas colocadas ${reinasColocadas}`;
 
     document.getElementById('opciones').selectedIndex = 0;
+    document.getElementById('imagenes').selectedIndex = 0;
 }
